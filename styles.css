@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+  font-size: 62.5%; /*makes 1rem = 10px*/
+}
+
+body {
+  box-sizing: border-box;
+  background-color:#43464b;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.screen {
+  grid-area: screen;
+  text-align: center;
+  border-bottom: 2px solid;
+  padding: 20px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+}
+
+.zero { grid-area: zero; }
+.one { grid-area: one; }
+.operate { grid-area: operate; }
+.two { grid-area: two; }
+.three { grid-area: three; }
+.four { grid-area: four; }
+.five { grid-area: five; }
+.six { grid-area: six; }
+.seven { grid-area: seven; }
+.eight { grid-area: eight; }
+.nine { grid-area: nine; }
+.add { grid-area: add; }
+.subtract { grid-area: subtract; }
+.multiply { grid-area: multiply; }
+.divide { grid-area: div; }
+
+.grid-container { 
+  display: grid;
+  grid-template-areas:
+    'screen screen screen screen'
+    'clr addSub bkspace div'
+    'seven eight nine multiply'
+    'four five six subtract'
+    'one two three add'
+    'zero zero operate operate';
+    grid-gap: 1rem;
+    
+}
+
+.grid-container > div {
+  text-align: center;
+}
+
+.btn {
+  padding: 3rem 3rem;
+  background: none;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: .25rem;
+}
