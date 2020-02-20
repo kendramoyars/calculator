@@ -1,3 +1,4 @@
+// store our elements into variables
 const text = document.querySelector('.inOut');
 const calcButtons = document.querySelectorAll('.calc');
 const clearButton = document.querySelector('.clr');
@@ -5,11 +6,13 @@ const opButton = document.querySelector('.operate');
 const negPosButton = document.querySelector('.negPos');
 const delButton = document.querySelector('.del');
 
+// declare nonconstant variables & reset display
 let displayValue = null;
 let total = null;
 let sum = null;
 text.textContent = "";
 
+// math functions for our operator function to call
 function add (a, b) {
   numA = parseFloat(a);
   numB = parseFloat(b);
@@ -31,7 +34,7 @@ function divide(a, b) {
   }
   return a / b;
 }
-
+// operatore function that decides which function to run based on the operator
 function operate(operator, a, b) {
   if (operator === '+') {
   return add(a, b);
@@ -44,6 +47,7 @@ function operate(operator, a, b) {
   }
 }
 
+// updates the display based on key pressed
 function handleDisplay(value) {
   if (displayValue === null) {
     text.textContent += value.key;
@@ -52,22 +56,23 @@ function handleDisplay(value) {
   }
 }
 
-// add event listeners on all buttons
+// updates the display based on buttons clicked
 function handleCalcButtonClick(event) {
   if (displayValue === null) {
     text.textContent += event.target.value;
   } else {
-    text.textContent = total+=event.target.value;
+    text.textContent = total+= event.target.value;
   }
-
 }
 
+// clears content and variables to restart
 function handleClearButtonClick(event) {
   text.textContent = '';
   total = null;
   displayValue = null;
 }
 
+// changes value from neg to pos or pos to neg
 function handleNegButtonClick(event) {
   if (text.textContent === "") {
     alert('Enter a value first')
@@ -77,12 +82,15 @@ function handleNegButtonClick(event) {
   }
 }
 
+// deletes last character on the display
 function handleDelButtonClick(event) {
   const values = text.textContent;
   dispArray = values.trim().split('');
   dispArray.pop();
   text.textContent = dispArray.join('');
 }
+
+// finding the right key and putting the value into the display
 function handleKey(event) {
   if(event.keyCode == 49) { //1
     handleDisplay(event);
@@ -120,12 +128,11 @@ function handleKey(event) {
   }
 }
 
+// calculates the total from the numbers in the display
 function handleOpButtonClick(event) {
   displayValue = text.textContent;
   if (text.textContent === "") {
-  
     alert('Enter some numbers into the calculator first!');
-    
   }
   const values = displayValue.trim();
   const separators = ['-', '\\\+', '\\*', '\\/'];
@@ -145,6 +152,7 @@ function handleOpButtonClick(event) {
  
 }
 
+// event listeners
 calcButtons.forEach(function(calcButton) {
   calcButton.addEventListener('click', handleCalcButtonClick);
 });

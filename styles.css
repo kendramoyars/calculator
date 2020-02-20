@@ -15,8 +15,6 @@ body {
   background-color: black;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
-  width: 100vw;
   
 }
 
@@ -24,12 +22,12 @@ body {
   grid-area: screen;
   text-align: center;
   border-bottom: 2px solid;
-  padding: 20px;
   font-size: 2rem;
   margin-bottom: 1rem;
   border-image: linear-gradient(45deg, rgb(0,205,205), rgb(117,0,128)) 1;
   padding: 3rem 0;
-  
+  height: 3rem;
+  background-color: rgba(117,0,128, 0.1);
 }
 
 .zero { grid-area: zero; }
@@ -47,6 +45,7 @@ body {
 .subtract { grid-area: subtract; }
 .multiply { grid-area: multiply; }
 .divide { grid-area: div; }
+.clear {grid-area: clr;}
 
 .grid-container { 
   display: grid;
@@ -58,12 +57,10 @@ body {
     'one two three add'
     'zero zero operate operate';
     grid-gap: 1rem;
-    padding: 0 60rem;
+    
    
 
 }
-
-
 
 .btn {
   width: 100%;
@@ -78,6 +75,7 @@ body {
   text-transform: uppercase;
   letter-spacing: .25rem;
   transition: background-color .04s ease-in-out;
+  background-color: rgba(117,0,128, 0.1);
 }
 
 .btn:hover {
