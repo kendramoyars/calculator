@@ -1,3 +1,5 @@
+const text = document.querySelector('.inOut');
+
 function add (a, b) {
   return a + b;
 }
@@ -26,4 +28,4 @@ function operate(operator, a, b) {
   }
 }
 
-console.log(operate('multiply', 4, 5));
+// add event listeners on all buttons

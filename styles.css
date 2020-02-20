@@ -12,9 +12,12 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color:#43464b;
+  background-color: black;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  
 }
 
 .screen {
@@ -24,7 +27,8 @@ body {
   padding: 20px;
   font-size: 2rem;
   margin-bottom: 1rem;
-  border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+  border-image: linear-gradient(45deg, rgb(0,205,205), rgb(117,0,128)) 1;
+  
 }
 
 .zero { grid-area: zero; }
@@ -53,23 +57,31 @@ body {
     'one two three add'
     'zero zero operate operate';
     grid-gap: 1rem;
-    
+    padding: 0 60rem;
+   
+
 }
 
-.grid-container > div {
-  text-align: center;
-}
+
 
 .btn {
-  padding: 3rem 3rem;
+  width: 100%;
+  padding: 3rem;
   background: none;
   color: white;
-  width: 100%;
   cursor: pointer;
   outline: none;
   border: 2px solid;
-  border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
-  font-size: 1.3rem;
+  border-image: linear-gradient(45deg, rgb(0,205,205), rgb(117, 0, 128)) 1;
+  font-size: 1.9rem;
   text-transform: uppercase;
   letter-spacing: .25rem;
+  transition: background-color .04s ease-in-out;
 }
+
+.btn:hover {
+ color: rgb(0,205,205);
+ background-color: rgba(255,255,255, 0.1);
+
+}
+
